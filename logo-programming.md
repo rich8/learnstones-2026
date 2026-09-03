@@ -12,7 +12,7 @@ Logo is the best and simplest way to start real programming.
 - Visual output
 - fun
 
-![](/media/dra/computing/logo-programming/logotitle.png)
+![](images/logotitle.png)
 
 ### Traffic Light Check
 
@@ -101,7 +101,7 @@ to SQU
 end
 ```
 
-1. We need a bit more space so open the command window using the black arrow [HELP!!](/media/dra/computing/logo-programming/logointerpretertoggle.png)
+1. We need a bit more space so open the command window using the black arrow [HELP!!](images/logointerpretertoggle.png)
 2. Enter your code (from above)
 3. Click Run
 4. Click on Library (top right) to check that your code has been saved.
@@ -136,13 +136,13 @@ Now we have named some sub routines we can combine them into new things. It allo
 
 #### Task 1: Create a House using SQU and TRI
 
-![](/media/dra/computing/logo-programming/logohouse1.png)
+![](images/logohouse1.png)
 
-[HINT (don't use it unless you Reeelly need it!)](//media.learnstones.com/dra/computing/logo-programming/logohouse.png)
+[HINT (don't use it unless you Reeelly need it!)](images/logohouse.png)
 
 #### Task 2: (Harder) Create a street
 
-![](/media/dra/computing/logo-programming/logostreet.png)
+![](images/logostreet.png)
 
 ### Traffic Light Checkpoint
 
@@ -176,13 +176,13 @@ END
 
 ## 1. Flower
 
-Start with the head first ![](/media/dra/computing/logo-programming/logoflower.png)
+Start with the head first ![](images/logoflower.png)
 
 ## 2. Bird
 
 Can you create a single bird like the ones used in this Flock picture (We will do the whole flock later)
 
-![](/media/dra/computing/logo-programming/logoflock.png)
+![](images/logoflock.png)
 
 ### Submit
 
@@ -196,7 +196,7 @@ Copy and paste all your code for your CURV Challenge
 
 We can use variables to vary the size of the square
 
-![](/media/dra/computing/logo-programming/logosizevariable.png)
+![](images/logosizevariable.png)
 
 ## Task: Use your own variables to change the size of shapes (eg. HEX, TRI, SQU)
 
@@ -228,11 +228,11 @@ for example random colour using the set pen colour command
 
 # Random Challanges
 
-![](/media/dra/computing/logo-programming/logorandommoves2.png)
+![](images/logorandommoves2.png)
 
-![](/media/dra/computing/logo-programming/logorandommoves.png)
+![](images/logorandommoves.png)
 
-![](/media/dra/computing/logo-programming/logorandommoves3.png)
+![](images/logorandommoves3.png)
 
 ### Checkpoint
 
@@ -252,7 +252,7 @@ The best thing about Logo is having fun and doing something that interests you. 
 
 ## What do you want to do today?
 
-![](http://turtleart.org/gallery/images/eyes.png)
+![](images/eyes.png)
 
 This image is created in Logo. You can [buy a print of it](http://www.artami.co.uk/turtleart/indexdigital.htm) to put on your wall. You can [buy a book](http://www.blurb.co.uk/b/651323-turtle-art?redirect=true) of images like this which includes the code used to generate it.
 
@@ -276,7 +276,7 @@ See if you can get it printed in colour
 
 Lots of inspiration here to use tiny amounts of code (15 words max) to produce a big effect
 
-[![](http://www.mathcats.com/images/15wordshow/roses.gif)](http://www.mathcats.com/gallery/15wordcontest.html)
+[![](images/roses.gif)](http://www.mathcats.com/gallery/15wordcontest.html)
 
 [click image to visit the site](http://www.mathcats.com/gallery/15wordcontest.html)
 
@@ -325,7 +325,7 @@ If you miss the reduction in size the program will never stop... and it could ge
 - change stopping condition
 - add a branch width
 
-[![logo_drawing](http://learnstones.com/wpls/wp-content/uploads/logo_drawing.png)](http://learnstones.com/wpls/wp-content/uploads/logo_drawing.png)
+[![logo_drawing](images/logo_drawing.png)](images/logo_drawing.png)
 
 ---
 
@@ -333,11 +333,11 @@ If you miss the reduction in size the program will never stop... and it could ge
 
 Recursion is an extremely powerful programming technique that involves a sub that 'calls' itself.. a bit like a snake eating its tail. If you don't tell in when to stop it can crash your computer - so it can be dangerous
 
-Recursion is used to create fractals&nbsp;![mandelbrot image](http://upload.wikimedia.org/wikipedia/commons/8/82/Mandelbrot-similar-x2000.jpg)
+Recursion is used to create fractals&nbsp;![mandelbrot image](images/Mandelbrot-similar-x2000.jpg)
 
 It is useful for searching a file system. It goes down from the root into each and every branch (folder) of the system. It is also used by nature to create things like trees. You can see the tree and fern in the examples on [Calormen (Josh Bell's) Logo Interpreter](http://www.calormen.com/Logo/)
 
-![](/media/dra/computing/logo-programming/logofern.png)
+![](images/logofern.png)
 
 Here is TEF's "Papert Logo Online" with code for the [Koch Snowflake](http://logo.twentygototen.org/_REo_2F2)
 
@@ -392,7 +392,7 @@ I have watched at least 2 videos
 
 # Teachers Notes
 
-[![LogoLevelsGCSE](http://learnstones.com/wpls/wp-content/uploads/LogoLevelsGCSE.png)](http://learnstones.com/wpls/wp-content/uploads/LogoLevelsGCSE.png)
+[![LogoLevelsGCSE](images/LogoLevelsGCSE.png)](images/LogoLevelsGCSE.png)
 
 - Environment
 - Drawing (younger)=> puzzles: golf, maze see app notes
@@ -414,4 +414,4 @@ Also recursive
 
 ![](/media/dra/computing/logo-programming/logospiral.png)
 
-??? ![](/media/dra/computing/logo-programming/logoskool.png) ![](/media/dra/computing/logo-programming/logocirclepattern.png) ![](/media/dra/computing/logo-programming/logowoops.png)
+??? ![](images/logoskool.png) ![](images/logocirclepattern.png) ![](images/logowoops.png)

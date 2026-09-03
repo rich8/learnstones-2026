@@ -103,6 +103,16 @@
     });
   }
 
+  function preventCodeBlockCopy(root) {
+    ["copy", "cut", "dragstart"].forEach(function (eventName) {
+      root.addEventListener(eventName, function (event) {
+        if (event.target.closest && event.target.closest("pre")) {
+          event.preventDefault();
+        }
+      });
+    });
+  }
+
   function createButton(className, text, title) {
     var button = document.createElement("button");
     button.type = "button";
@@ -276,6 +286,7 @@
       content.className = "learnstones-content";
       content.innerHTML = slide.html;
       localizeLessonLinks(content);
+      preventCodeBlockCopy(content);
       section.appendChild(content);
       section.appendChild(buildLights(markSlide));
       stage.appendChild(section);

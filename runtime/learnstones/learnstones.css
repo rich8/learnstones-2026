@@ -272,6 +272,9 @@ button {
   padding: 12px;
   border: 1px solid #d0d0d0;
   background: #f7f7f7;
+  cursor: default;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .ls_lights {

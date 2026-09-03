@@ -33,7 +33,7 @@ In this lesson you will actually be working on the public internet so remember:
 3. press run and watch your website appear on the bottom right
 4. Add the following
 
-   > This is a website about me `<b>`Billy`</b>` written in html.
+   > This is a website about me `<b>Billy</b>` written in html.
 
 (use your first names only - to be web safe)
 

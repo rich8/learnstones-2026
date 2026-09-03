@@ -3,7 +3,10 @@
 
 # Historical WordPress plugin checkout; it has its own repository and is not
 # part of the static Learnstones site.
-learnstones/
+/learnstones/
 
 # Windows/WSL metadata.
 *:Zone.Identifier
+
+# Temporary visual QA captures.
+Screenshot*.png

@@ -1,0 +1,361 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 34px;
+  line-height: 1.45;
+}
+
+button {
+  font: inherit;
+}
+
+.learnstones-loading,
+.learnstones-error {
+  padding: 24px;
+}
+
+.ls_menu {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  background-color: transparent;
+}
+
+.learnstones-menu-inner {
+  width: 100%;
+}
+
+.ls_stones {
+  border: 2px solid #a1a1a1;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #dddddd;
+  margin: 10px;
+  height: 124px;
+  overflow: hidden;
+  box-shadow: 0 -10px 0 10px #fff;
+}
+
+.ls_stones table {
+  border: 0;
+  width: auto;
+  border-collapse: collapse;
+}
+
+.ls_stones td {
+  border: 0;
+  text-align: center;
+  margin: 0;
+  padding: 0 0 0 4px;
+  vertical-align: top;
+}
+
+.ls_stones td.ls_rotated {
+  height: 80px;
+  width: 100px;
+}
+
+.ls_stones td.ls_rotated > div {
+  height: 80px;
+  width: 100px;
+}
+
+.ls_menu_input {
+  display: block;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #21759b;
+  box-shadow: none;
+  white-space: normal;
+  hyphens: none;
+  padding: 0;
+}
+
+.ls_menu_input:hover,
+.ls_menu_input:focus {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #21759b;
+  box-shadow: none;
+  white-space: normal;
+  text-decoration: underline;
+  hyphens: none;
+  padding: 0;
+}
+
+.ls_menu_input_align {
+  text-align: center;
+  font-size: medium;
+  line-height: normal;
+  width: 100px;
+  vertical-align: top;
+}
+
+.ls_menuimg,
+.ls_menuimg:hover,
+.ls_menuimg:focus {
+  display: inline-block;
+  background-image: url("lsimg.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 0;
+  width: 64px;
+  height: 64px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 24px;
+  padding: 0;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.ls_menu0,
+.ls_menu0:hover,
+.ls_menu0:focus {
+  background-position: 0 0;
+}
+
+.ls_menu1,
+.ls_menu1:hover,
+.ls_menu1:focus {
+  background-position: -64px 0;
+}
+
+.ls_menu2,
+.ls_menu2:hover,
+.ls_menu2:focus {
+  background-position: -128px 0;
+}
+
+.ls_menu3,
+.ls_menu3:hover,
+.ls_menu3:focus {
+  background-position: -192px 0;
+}
+
+.ls_menu4,
+.ls_menu4:hover,
+.ls_menu4:focus {
+  background-position: -173px -96px;
+}
+
+.ls_menu_active,
+.ls_menu_active:hover,
+.ls_menu_active:focus {
+  box-shadow: 0 0 5px 5px #ffffa3;
+  border-radius: 50%;
+  background-color: #ffffa3;
+}
+
+.learnstones-stage {
+  margin: 224px 0 0;
+  width: 100%;
+}
+
+.learnstones-slide {
+  display: none;
+}
+
+.learnstones-slide.is-active {
+  display: block;
+}
+
+.learnstones-content {
+  width: 100%;
+  margin: 0;
+  padding: 0 8px 20px;
+  background-color: #fff;
+}
+
+.learnstones-content h1 {
+  margin: 0 0 34px;
+  color: #09f;
+  font-size: 52px;
+  line-height: 1.2;
+}
+
+.learnstones-content h2 {
+  margin: 28px 0 16px;
+  font-size: 34px;
+  line-height: 1.2;
+}
+
+.learnstones-content h3 {
+  margin: 24px 0 12px;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.learnstones-content h4 {
+  margin: 22px 0 10px;
+  font-size: 26px;
+  line-height: 1.25;
+}
+
+.learnstones-content p,
+.learnstones-content ul,
+.learnstones-content ol,
+.learnstones-content blockquote,
+.learnstones-content pre {
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
+.learnstones-content ul,
+.learnstones-content ol {
+  padding-left: 50px;
+}
+
+.learnstones-content a {
+  color: #21759b;
+}
+
+.learnstones-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.learnstones-content input[type="text"],
+.learnstones-content input:not([type]) {
+  min-width: min(40ch, 100%);
+  max-width: 100%;
+  padding: 6px 10px;
+  border: 2px solid #a1a1a1;
+  border-radius: 5px;
+  background: #fff;
+  color: #333;
+  font: 0.7em Consolas, Monaco, "Courier New", monospace;
+}
+
+.learnstones-content input[type="text"]:focus,
+.learnstones-content input:not([type]):focus {
+  border-color: #09f;
+  outline: 2px solid rgba(0, 153, 255, 0.25);
+  outline-offset: 1px;
+}
+
+.learnstones-content blockquote {
+  margin-left: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.learnstones-content code {
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+.learnstones-content :not(pre) > code {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid #b87333;
+  border-left-width: 10px;
+  background: #fffaf0;
+}
+
+.learnstones-content pre {
+  overflow-x: auto;
+  padding: 12px;
+  border: 1px solid #d0d0d0;
+  background: #f7f7f7;
+}
+
+.ls_lights {
+  list-style-type: none;
+  margin: 10px 20px 10px 18px;
+  border: 2px solid #a1a1a1;
+  padding: 3px;
+  border-radius: 10px;
+  background-color: #dddddd;
+}
+
+.ls_lights li {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  line-height: 32px;
+}
+
+.ls_lightsa {
+  background-image: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #21759b;
+  box-shadow: none;
+  padding: 0 0 0 5px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.ls_lightsa:hover,
+.ls_lightsa:focus {
+  background-image: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #21759b;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
+.ls_lightsspan,
+.ls_lightsspan:hover,
+.ls_lightsspan:focus {
+  background-image: url("lsimg.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  display: block;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.ls_lightsl1,
+.ls_lightsl1:hover,
+.ls_lightsl1:focus {
+  background-position: 0 -96px;
+}
+
+.ls_lightsl2,
+.ls_lightsl2:hover,
+.ls_lightsl2:focus {
+  background-position: 0 -128px;
+}
+
+.ls_lightsl3,
+.ls_lightsl3:hover,
+.ls_lightsl3:focus {
+  background-position: 0 -160px;
+}
+
+@media (max-width: 1100px) {
+  body {
+    font-size: 24px;
+  }
+
+  .learnstones-content h1 {
+    font-size: 42px;
+  }
+}

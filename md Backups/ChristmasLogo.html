@@ -1,0 +1,113 @@
+<h1>Tree</h1>
+
+<a href="http://media.learnstones.com/jslogo/?to%20tri%20:size%20rt%20150%20repeat%203%20[fd%20:size%20rt%20120]%20lt%20150%20pu%20bk%20(:size%20*%200.5)%20pd%20END%20cs%20setpensize%201%20filled%20%22yellow%20[repeat%205%20[fd%2030%20rt%20144]]%20setpencolor%20%22green%20setpensize%201%20filled%20%22green%20[%20for%20[sg%2020%2060%2010][tri%20:sg]%20]%20bk%2040">Tree</a>
+
+<img src="http://learnstones.com/wpls/wp-content/uploads/2014/12/Tree_Christmas.png" alt="" />
+
+<blockquote>
+  <p>cs setpensize 1 filled &quot;yellow [repeat 5 [fd 30 rt 144]]
+  setpencolor &quot;green setpensize 1</p>
+  
+  <p>rt 150 repeat 3 [fd 20 rt 120] lt 150 bk 10
+  rt 150 repeat 3 [fd 30 rt 120] lt 150 bk 15
+  rt 150 repeat 3 [fd 40 rt 120] lt 150 bk 20
+  rt 150 repeat 3 [fd 50 rt 120] lt 150 bk 25
+  rt 150 repeat 3 [fd 60 rt 120] lt 150 bk 30</p>
+</blockquote>
+
+Add the <code>filled "lime []</code> around the tree part to make it green, (or lime so you can see whats happening - btw. penup doesn't work inside the filled shape)
+
+<blockquote>
+  <p>cs setpensize 1 filled &quot;yellow [repeat 5 [fd 30 rt 144]]
+  setpencolor &quot;green setpensize 1 
+  filled &quot;lime [
+  rt 150 repeat 3 [fd 20 rt 120] lt 150 bk 10
+  rt 150 repeat 3 [fd 30 rt 120] lt 150 bk 15
+  rt 150 repeat 3 [fd 40 rt 120] lt 150 bk 20
+  rt 150 repeat 3 [fd 50 rt 120] lt 150 bk 25
+  rt 150 repeat 3 [fd 60 rt 120] lt 150 bk 30
+  ]</p>
+</blockquote>
+
+Use a subroutine with the size variable to reduce repetition and increase flexibility (eg. change the overlapping fraction 0.5)
+
+<blockquote>
+  <p>to tri :size
+      rt 150 repeat 3 [fd :size rt 120] lt 150 pu bk (:size * 0.5) pd
+  END
+  cs setpensize 1 filled &quot;yellow [repeat 5 [fd 30 rt 144]]
+  setpencolor &quot;green setpensize 1
+  filled &quot;lime [
+    tri 20
+    tri 30
+    tri 40
+    tri 50
+    tri 60
+  ]
+  bk 40</p>
+</blockquote>
+
+<h3>For Loop ... for [var start stop step][ statements to repeat]</h3>
+
+The <code>For</code> loop is similar to using <code>repeat</code> with <code>repcount</code> but is a little more elegant. Now you easily change the number and size of the segments
+
+<blockquote>
+  <p>to tri :size
+      rt 150 repeat 3 [fd :size rt 120] lt 150 pu bk (:size * 0.5) pd
+  END
+  cs setpensize 1 filled &quot;yellow [repeat 5 [fd 30 rt 144]]
+  setpencolor &quot;green setpensize 1
+  filled &quot;lime [
+    for [sg 20 60 10][tri :sg]
+  ]
+  bk 40</p>
+</blockquote>
+
+<h3>Next Steps</h3>
+
+<ul>
+<li>More trees to make a forest</li>
+<li>More stars</li>
+<li>Random colours on Stars</li>
+<li>Different Tree heights</li>
+</ul>
+
+<hr />
+
+<h1>Ideas</h1>
+
+<ul>
+<li>Circles - baubles, snowman</li>
+<li>Stars ... wobbly star = repeat 12 [fd 100 rt 144]</li>
+<li>Crackers</li>
+<li>Snow Flakes </li>
+</ul>
+
+<p><img src="http://static.vecteezy.com/system/resources/thumbnails/000/000/171/large/Snowflakes-blue.jpg" alt="" />
+<img src="http://cdn.instructables.com/FS8/3P0V/G1QVZ35E/FS83P0VG1QVZ35E.MEDIUM.jpg" alt="" /></p>
+
+<hr />
+
+<h1>Stars</h1>
+
+<a href="http://media.learnstones.com/jslogo/?To%20STAR%20setpencolor%20random%2016%20repeat%2012%20[fd%20140%20rt%20145]%20END%20Repeat%2010%20[star%20pu%20fd%20random%20500%20pd]">Stars</a>
+
+<img src="http://learnstones.com/wpls/wp-content/uploads/2014/12/logo_stars.png" alt="" />
+
+<pre><code>To STAR :size
+setpencolor random 16
+repeat 12 [fd :size rt 145]
+END
+
+cs Repeat 10 [star random 180 pu fd random 500 pd]
+</code></pre>
+
+Using a size variable can help
+
+<pre><code>To STAR :size
+setpencolor random 16
+repeat 12 [fd :size rt 145]
+END
+
+cs Repeat 10 [star random 180 pu fd random 500 pd]
+</code></pre>

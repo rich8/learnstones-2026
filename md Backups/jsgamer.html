@@ -1,0 +1,286 @@
+<h1>Why Javascript?</h1>
+Javascript is a great choice for game development because:
+<ul>
+	<li>You can develop on PC, Mac or Linux. Just use a text editor and your browser</li>
+	<li>Game can work on all devices if published on the web.</li>
+	<li>No software to download</li>
+</ul>
+You can use any text editor, but we recommend one with syntax highlighting for javascript.
+<h1>Warning</h1>
+Javascript is Case Sensitive so this means eg. the following can cause problems
+<pre><code>getElementbyId('car') //note g and d are lowercase,
+Also, missing semi-colons (both in CSS and JS) will also cause you pain!!!
+
+</code></pre>
+<br>
+
+
+<h1>Getting Started</h1>
+You will need to create a text file game.html and save it into a folder called game
+<ul>
+	<li>game.html (click on this to open the game in the browser)</li>
+</ul>
+
+<hr />
+
+<h1>game.html</h1>
+Copy the contents into game.html and save. Its important to get the .extension correct so that clicking on game.html will open the game up in a browser
+<pre><code>&lt;style&gt;
+  &lt;--- css goes in-between the style tags --&gt;
+#car {
+  position:absolute;  /*"left" doesn't work without this */
+  background:red;
+  width:100px;
+  height:100px;
+  left:0px;
+}
+
+&lt;/style&gt;
+
+&lt;body&gt;
+  &lt;--- html goes in-between the body tags --&gt;
+
+  &lt;div id="car"&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;script&gt;
+  &lt;--- javascript goes in-between the script tags--&gt;
+&lt;/script&gt; 
+</code></pre>
+
+
+<h2>External Javascript (Alternative Method)</h2>
+<h3>Does not work on the JIS network</h3>
+
+Some people like to keep the javascript in a separate file. As it keeps the game logic separate from the html and css. If you would like to do this change the 2 script tags as follows:
+<pre><code>&lt;script src=game.js&gt;&lt;/script&gt;
+</code></pre>
+would link game.html to game.js
+
+<hr />
+
+<h1>Adding javascript</h1>
+You can either type in the code, which might help you understand it. Or copy and paste it from the following file into <a href="http://learnstones.com/wpls/wp-content/uploads/javascript2.txt" target="_blank">javascript.txt</a>
+
+<pre><code>//define the player as the circ from the html 
+var player = document.getElementById("car");
+
+//to prove js is working on the css style
+player.style.background = 'blue'; 
+
+//call the gameloop every 20 milliseconds = 5fps
+var intervalId = setInterval(gameloop, 20); 
+
+//Add the Envent Listener for keyboard to trigger the Handler
+document.addEventListener('keydown', EventHandler );
+
+//define other movement global variables 
+var x = 0;
+var y = 0;
+
+// end of the main program
+</code></pre>
+
+<hr />
+
+<h1>Gameloop</h1>
+Add the following to the bottom of your javascript in-between the script tags in game.html
+<pre><code>function gameloop(){
+    //game logic goes here
+
+    //redraw (move) statement
+    player.style.left = x;
+    player.style.top = y;
+
+} //end of gameloop
+</code></pre>
+
+<hr />
+
+<h1>Keydown Event</h1>
+Add this code below your gameloop in game.html. It will allow you to control the car using the W,A,S,D keys:
+<pre><code>function EventHandler(event){
+//globals x,y can be used in this handler
+
+  if (event.code == 'KeyD') {
+    x = x + 10;
+  }
+  if (event.code == 'KeyA') {
+    x = x - 10;
+  }
+  if (event.code == 'KeyW') {
+    y = y -10;
+  }
+  if (event.code == 'KeyS') {
+    y = y + 10;
+  }
+} //end of the event handling function. 
+  //The Listener loops through this function continuously
+  //passing the event as a parameter (in the brakets) is necessary for Firefox and Safari but not Chrome
+</code></pre>
+
+<hr />
+
+<h1>Outside Room</h1>
+If the car gets to the edge of the game area screen we are going to restart it at x=50; y=50;
+<pre><code>//Detect left and right walls, 
+if (x &lt; 0 || x &gt; 600) {
+  x = 50;
+  y = 50;
+} 
+//you will also have to do top and bottom of the boundary
+</code></pre>
+<h2>Boolean / Logical Operators</h2>
+<pre><code>|| is boolean OR in Javascript
+&amp;&amp; is boolean AND in Javascript
+</code></pre>
+<a href="https://www.w3schools.com/js/js_comparisons.asp">Extra Reading</a>
+<h1>Draw the Boundary</h1>
+If you want to draw the boundary you need to add it to your css and html
+<h1>CSS</h1>
+<pre><code>#boundary {
+  position:absolute;
+  background:yellow;
+  top:0px;
+  left:0px;
+  height:500px;
+  width:500px;
+}
+</code></pre>
+<h1>Html</h1>
+Must come before the Car or the car will be hidden
+<pre><code>&lt;div id=boundary&gt;&lt;/div&gt;    
+</code></pre>
+
+<hr />
+
+<h1>Sprites</h1>
+In game.html add the following css to the #car {
+<pre><code>  background-image: url("car-animated.gif");
+</code></pre>
+<img src="http://learnstones.com/wpls/wp-content/uploads/car-animated.gif" alt="" />
+Then right click the image above and save it into your game folder as 'car-animated.gif'
+
+The dimensions are 184 x 84 px. You will need these values for the collision detection with the grasss
+
+(Thanks to Chloe C for the Image)
+
+<hr />
+
+<h1>Animation</h1>
+Continuous animation can be achieved with an animated gif. More complex animations in response to code can be added to the Event Handler or a collision detection statement in the game loop.
+<pre><code>player.style.transform = scaleX(-1);      //flip horizontal
+player.style.transform = 'rotate(-90deg)';  //rotate left 90 deg
+player.style.transform = scale(2, 2,);    //Scale by 200%
+player.src = Car-crashed.gif              //Change the image
+</code></pre>
+<h2>Multiple Transforms</h2>
+If you add a second CSS/Style transform statement the first once gets cancelled. So, have just one transform line with the different types separated by space.
+<pre><code>player.style.transform = scaleX(-1) rotate(-90);
+</code></pre>
+Transform help <a href="https://www.w3schools.com/jsref/prop_style_transform.asp">See Also</a>
+Image help <a href="https://www.w3schools.com/jsref/prop_img_src.asp">See Also</a>
+
+<hr />
+
+<h1>Grass</h1>
+Add the central reservation using the following CSS inside your &lt; style &amp;rt;' tags in game.html:
+<pre><code>.grass {
+  position:absolute;
+  background:green;
+}
+#g1{left:100px; top:100px; width:300px; height:300px;}
+</code></pre>
+Then add the following html after your
+<div id="car"></div>
+<pre><code>&lt;div class=grass id=g1&gt;&lt;/div&gt;
+</code></pre>
+you can add g2 (and g3,etc) in the following way:
+<h2>CSS</h2>
+<pre><code>#g2{left:300px; top:300px; width:300px; height:300px;}
+</code></pre>
+<h2>HTML</h2>
+<pre><code>&lt;div class=grass id=g2&gt;&lt;/div&gt;
+</code></pre>
+
+<hr />
+
+<h1>Collision Detection</h1>
+So if you hit the grass you should respawn back at the start where x = 50 and y = 50
+<h2>Gameloop</h2>
+<pre><code>checkgrass ( 100, 100, 300, 300); //checks g1
+</code></pre>
+<h2>After Gameloop</h2>
+<pre><code>function checkgrass (grassx, grassy, grasswidth, grassheight){
+ var carwidth = 50;  
+ var carheight = 50;
+ if (x &gt; grassx - carwidth &amp;&amp; x &lt; grassx + grasswidth &amp;&amp; y &gt; grassy - carheight &amp;&amp; y &lt; grassy + grasswidth){
+   //respawn player
+   x= 50;
+   y= 50;
+ }
+}
+</code></pre>
+You should thoroughly check that the collision detection works on g1 before adding g2 etc. The fact that the car is using a step based movement should make this job possible.
+
+<hr />
+
+<h1>Instructions</h1>
+To add instructions or gameover screens (see image below)
+
+<img src="http://learnstones.com/wpls/wp-content/uploads/instructions.png" alt="" />
+<h2>CSS</h2>
+This puts instuctions over-layed on layer 2 The game is on layer 1. The Javascript will switch the instructions to layer -1 for the game to start.
+<pre><code>#instructions {
+  position:absolute;
+  background:white;
+  opacity: 0.8;
+  border-radius:20px;
+  box-shadow:5px 3px 5px grey;
+  left:50px;
+  top:50px;
+  height:470px;
+  width:400px;
+  z-index:2;
+  padding:20px;
+  font-family: 'Shrikhand', serif;
+  text-align:center;
+  font-size: 28px;
+}
+</code></pre>
+<h2>HTML</h2>
+<pre><code>&lt;link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Shrikhand"&gt;
+&lt;div id="instructions"&gt;
+  &lt;h1&gt;JS Racer&lt;/h1&gt;
+  &lt;img src="title.jpg"/&gt;&lt;br&gt;
+   W A S D Keys&lt;br&gt;
+  &lt;img src="wasd.jpg" width=100px/&gt;&lt;br&gt;
+  Press Space to Start
+&lt;/div&gt;
+</code></pre>
+<h2>JS</h2>
+This code goes in the event handler. It will remove the instructions but putting them behind the game on layer -1 (lower than 1)
+<pre><code>if (event.code == 'Space'){
+  document.getElementById("instructions").style.zIndex = -1;
+}
+</code></pre>
+<h2>Images</h2>
+Right click and save the following images into your 'game' folder
+<img src="http://learnstones.com/wpls/wp-content/uploads/title.jpg" alt="" />
+Car image from those wonderful people at <a href="https://www.123rf.com/photo_98851737_stock-vector-isolated-racing-car-icon-vector-illustration-design-.html">123DF.com</a>
+<img src="http://learnstones.com/wpls/wp-content/uploads/wasd.jpg" alt="" />
+
+<hr />
+
+<h1>Finish the Game</h1>
+<h2>You could try</h2>
+<ul>
+	<li>1 or 2 Player?</li>
+	<li>Buttons for Ipad/ Android</li>
+	<li>Swipe</li>
+	<li>Mouse</li>
+	<li>Map editor</li>
+</ul>
+<h1>Links</h1>
+<a href="https://stackoverflow.com/questions/5882716/html5-canvas-vs-svg-vs-div">Canvas vs SVG vs DIV</a>

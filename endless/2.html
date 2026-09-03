@@ -1,0 +1,223 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine">
+<style>
+/*single2.html with 3d but no map see single3 for map */
+.squ {
+  position:absolute;
+  background:pink;
+  color:#F44;
+  z-index:2;
+  opacity:0.7;
+  top:0;
+  left:0;
+  width:0;
+  height:0;
+  border-radius:0px;
+  box-shadow:5px 3px 5px grey;
+  font-family:Cousine;
+  padding:20px;
+}
+#circ {
+  position:absolute;  /*"left" doesn't work without this */
+  width:320px;
+  height:400px;
+}
+#sc {
+  //position:absolute;
+  left:0px;
+}
+
+  </style>
+  <body>
+  <div id='sc'></div>
+      <div id=circ></div>
+<p>a=left s = right</p>
+<a href="https://en.wikipedia.org/wiki/Platform_game#Endless_running_game">Endless Game Genre</a><br>
+Inspired partly by <a href="https://www.youtube.com/watch?v=ZtHCnXMjIXY">Subway Surfer</a>
+<div id='49' class='squ'>49</div>
+<div id='48' class='squ'>48</div>
+<div id='47' class='squ'>47</div>
+<div id='46' class='squ'>46</div>
+<div id='45' class='squ'>45</div>
+<div id='44' class='squ'>44</div>
+<div id='43' class='squ'>43</div>
+<div id='42' class='squ'>42</div>
+<div id='41' class='squ'>41</div>
+<div id='40' class='squ'>40</div>
+<div id='39' class='squ'>39</div>
+<div id='38' class='squ'>38</div>
+<div id='37' class='squ'>37</div>
+<div id='36' class='squ'>36</div>
+<div id='35' class='squ'>35</div>
+<div id='34' class='squ'>34</div>
+<div id='33' class='squ'>33</div>
+<div id='32' class='squ'>32</div>
+<div id='31' class='squ'>31</div>
+<div id='30' class='squ'>30</div>
+<div id='29' class='squ'>29</div>
+<div id='28' class='squ'>28</div>
+<div id='27' class='squ'>27</div>
+<div id='26' class='squ'>26</div>
+<div id='25' class='squ'>25</div>
+<div id='24' class='squ'>24</div>
+<div id='23' class='squ'>23</div>
+<div id='22' class='squ'>22</div>
+<div id='21' class='squ'>21</div>
+<div id='20' class='squ'>20</div>
+<div id='19' class='squ'>19</div>
+<div id='18' class='squ'>18</div>
+<div id='17' class='squ'>17</div>
+<div id='16' class='squ'>16</div>
+<div id='15' class='squ'>15</div>
+<div id='14' class='squ'>14</div>
+<div id='13' class='squ'>13</div>
+<div id='12' class='squ'>12</div>
+<div id='11' class='squ'>11</div>
+<div id='10' class='squ'>10</div>
+<div id='9' class='squ'>9</div>
+<div id='8' class='squ'>8</div>
+<div id='7' class='squ'>7</div>
+<div id='6' class='squ'>6</div>
+<div id='5' class='squ'>5</div>
+<div id='4' class='squ'>4</div>
+<div id='3' class='squ'>3</div>
+<div id='2' class='squ'>2</div>
+<div id='1' class='squ'>1</div>
+
+  </body>
+  <script>
+var score = 0;
+var hiscore =0;
+var s = document.getElementById('sc');
+//s.innerHTML = String(score);
+//define the player as the circ from the html
+var player = document.getElementById("circ")
+
+//to prove js is working on the css style
+player.style.backgroundImage="url(Runner2.png)";
+
+//define other movement global variables
+var x = 500;
+var y = 600;
+var dx = 100;
+var dy = 100;
+var frm = 1;
+//var map = [1,1,1,1,1,1,1,1,1,1]
+//var map = [2,2,2,2,2,2,2,2,2,2]
+//var map = [3,3,3,3,3,3,3,3,3,3]
+var map = [0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,3,3,3,3,3,3,3,3,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0]
+var canGen = 0;
+var playerpos=2;
+
+
+//call the gameloop every 20 milliseconds = 5fps
+var intervalId = setInterval(gameloop, 70);
+//Add the Envent Listener for keyboard to trigger the Handler
+document.addEventListener('keydown', EventHandler );
+
+// end of the main program
+  var he = 0.4 //height of eye
+function drawMap (frame){
+  var ff = 4000; //forshorten factor
+
+  var t = 0;
+  var unit = 0; // size of the square by default is 0
+  for (i = 49; i >0; i=i-1) {
+    var squ = document.getElementById(i);
+    unit = 0;
+	squ.innerHTML = "";
+	squ.style.padding = 0;
+
+    if (map[i] !=0 ){
+	  unit = 1/i * ff;
+	  unit = Math.round(unit);
+      if (he !=0){  t = Math.round(unit * he);} //avoid div by zero
+	  var squpos = map[i]-2; //2 is the centre lane, 1 is left, 3 is right
+	  pos = squpos + (playerpos -2);
+	  var xpos = x + (pos - 0.5) * unit;
+	  xpos = Math.round(xpos)
+	  
+	  //Collision Detection
+	  if (i == 3 && pos == 0) {
+	  if (score > hiscore) {hiscore = score;}
+	  alert("dead" + " Lane " +squpos + " score:" +score + "hiscore" + hiscore);
+	  score = 0;
+
+	  }
+	  if (i == 2 && map[i] != 0){score = score +1;}
+	  s.innerHTML = String(score);
+	  var debug = i + " fr:" + frame + "<br>squpos:" + squpos + "<br>unit:" +unit;
+	  squ.style.left = xpos;
+	  squ.style.top = t;
+	  var squColour = 100 - (i*2);
+	  //alert(i + " , " + unit);
+	  squ.style.background = "rgb(" +  squColour + "%,0%,0%)"
+	  squ.style.padding = 10;
+    squ.style.fontSize = parseFloat(Math.round(unit/10))+"px";
+    squ.innerHTML = debug;
+	}
+    squ.style.height = unit;
+	  squ.style.width = unit;
+    squ.style.borderRadius = parseFloat(Math.round(unit/20))+"px";
+	
+	//animate the runner
+	if (frame%4 == 0){
+	    player.style.transform = "scaleX(-1) scale(0.7)";
+	}
+	if ((frame+2)%4 == 0){
+	    player.style.transform = "scaleX(1) scale(0.7)";
+	}
+  }
+}
+
+function gameloop(){
+
+    //move the ball (continuous movement)
+	genNewSqu();
+	drawMap(frm);
+    map.shift();
+	frm = frm + 1;
+
+	//edges of the room
+	//if (x > 1000 || x < 0) { onEdge();}
+	//if (y > 460  || y < 0) { onEdge();}
+
+	//redraw (move) statement
+	player.style.left = x-100;
+	player.style.top = y;
+
+} //end of gameloop
+
+function genNewSqu() {
+  if(typeof map[50] === 'undefined') {
+	if (canGen != 0 && Math.random() > 0.8){
+	  map[50] = Math.floor(Math.random() * 6);
+	  canGen = 0;
+	} else {
+	  if (Math.random() < 0.7) {
+	    map[50] = map [49];
+	  } else {
+	    map[50] = 0;
+		canGen = 1;
+	  }
+    }
+  }
+}
+
+//add other Collision Detection functions here eg. checkGrass(top_x,top_y,w,h)
+
+
+
+function EventHandler(event){
+//globals x,y and dx,dy can be used in this handler
+
+  if (event.code == 'KeyA') {
+    playerpos = playerpos +1;
+  }
+  if (event.code == 'KeyS') {
+    playerpos = playerpos -1;
+  }
+  if (playerpos > 3){playerpos = 3;}
+  if (playerpos < -1){playerpos = -1;}
+  }//end of the event handling loop
+
+  </script>

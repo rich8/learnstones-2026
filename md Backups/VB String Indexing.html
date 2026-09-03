@@ -1,0 +1,122 @@
+<h1>String Indexing</h1>
+
+String indexing is a great way of practicing the techniques we need for arrays but using the string syntax that you are already familiar with. In this lesson you will work on:
+
+<ul>
+<li>mystring(0) identifies the first character in a string. </li>
+<li>Looping through items using a for loop </li>
+<li>Using <code>len(mystring) - 1</code> to identify the end char</li>
+<li>Using boolean flags (eg found = False)</li>
+<li>Searching (uses all the above)</li>
+<li>Counting (incrementing) and Summing</li>
+</ul>
+
+You will find the VB6 Arrays lesson easy after trying these examples.
+
+<h2>Theory</h2>
+
+A string is bascially an array of Chars (letters/characters). In the C programming language, one of the earliest high level lanagues, there is no string datatype, you have to declare an array of chars. In Python there is little difference.
+
+<h2>Uses</h2>
+
+<ol>
+<li>Ciphers &amp; Code breaking: Caesar Cipher, Transposition and Substitution Ciphers can all be programmed using String Indexing</li>
+<li>Anagrams, Palindromes and Writing your name backwards can all be done using String Indexing.</li>
+<li>Sorting at its most simple can be practised using String Indexing</li>
+</ol>
+
+<hr />
+
+<h1>Linear Search: Found</h1>
+
+<ul>
+<li>A linear search loops through each char from the first (index = 0) to the last to find the char. </li>
+<li><a href="https://www.hackerrank.com/contests/vb-gcse/challenges/simple-linear-search-found">Link to Online Challenge</a></li>
+</ul>
+
+VB.net code
+
+<pre><code>  Module VBModule
+      Sub Main()
+          Dim mystring as string = "abcdef"
+
+          'Create a boolean flag called found 
+          Dim found as boolean = False
+
+          'Online VB requires you to declare i (Visual Studio does not require this)
+          Dim i as integer
+          for i = 0 to len(mystring)-1
+              'here we are searching for "e" but you may ask the user to input the char to search for
+              if mystring(i) = "e" Then
+                  found = True
+
+                  'This is a debug line that will output the position "e" is found.
+                  Console.WriteLine(i)
+              end if
+          next
+
+          'After the loop output the result
+          if found = True Then
+              console.writeline("found")
+          Else
+              console.writeline("not found")
+          End if 
+      End Sub
+  End Module
+</code></pre>
+
+<h2>Theory</h2>
+
+<ol>
+<li>We loop through every char in the string by counting from <code>0 to len(mystring)-1</code></li>
+<li>Before the loop we set a boolean flag "found" to False to say we didn't find the item yet</li>
+<li>In the loop if we match the item we switch the flag "found" to True. The classic mistake is to have an Else Found = False command which is incorrect because once you have found the char, it shouldn't ever be switched back to Found = False. A flag should be switched once only.</li>
+</ol>
+
+<hr />
+
+<h1>Counting &amp; Summing</h1>
+
+<h2>Counting</h2>
+
+<ul>
+<li>Sometimes we want to know how many times a char is found in a string</li>
+<li><a href="https://www.hackerrank.com/contests/vb-gcse/challenges/simple-linear-search-count">Link to online Challenge</a>
+
+<pre><code>Dim count as Integer = 0
+
+For i = 0 to len(mystring)-1
+    If mystring(i) = "a" Then
+
+        'Increment the count
+        count = count + 1
+    End If
+Next
+</code></pre></li>
+</ul>
+
+<h2>Summing</h2>
+
+<ul>
+<li>We are no longer searching. This time we are adding up all the values. </li>
+<li>We need to convert the char into an integer using Integer.Parse(char). </li>
+<li>Note that if the char is not an integer there will be a runtime error.</li>
+<li><a href="https://www.hackerrank.com/contests/vb-gcse/challenges//add-numbers-in-a-string-1">Link to online Challenge</a>
+
+<pre><code>Dim mystring as String = "1234"  'must be numerical digits
+Dim sum as Integer = 0
+
+For i = 0 to len(mystring)-1
+
+        'Increment sum by the integer value of the string
+        sum = sum + Integer.Parse(mystring(i))
+    End If
+Next
+</code></pre></li>
+</ul>
+
+<hr />
+
+<h1>Next</h1>
+
+Lesson 6 <a href="http://learnstones.com/vb6">Array Processing</a>

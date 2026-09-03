@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+
+while read old_revision new_revision ref_name
+do
+  if [ "$ref_name" = "refs/heads/master" ]; then
+    git --work-tree=/var/www/html/ls --git-dir=/opt/learnstones-2026.git checkout -f master
+  fi
+done

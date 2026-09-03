@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Games Programming</title>
+<style type="text/css">
+<!--
+.style1 {font-family: Arial, Helvetica, sans-serif}
+-->
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 350px;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
+<script>
+// When the user clicks on div, open the popup
+function myPopupFunction1() {
+  var popup = document.getElementById("myPopup1");
+  popup.classList.toggle("show");
+}
+function myPopupFunction2() {
+  var popup = document.getElementById("myPopup2");
+  popup.classList.toggle("show");
+}
+
+</script>
+</head>
+
+<body class="style1">
+<h1 class="style1">Programming Video Games </h1>
+<p class="style1">Welcome to the Video Games help page you will learn a four step method to help you build some classic video games. Hopefully, then you can use this method to develop your own games. </p>
+<ol class="style1">
+  <li>Create </li>
+  <li>Movement</li>
+  <li>Collision Detection</li>
+  <li>Gameplay Development  </li>
+</ol>
+<p class="style1">How to <a href="https://docs.google.com/spreadsheets/d/1U0Yl2-p7OXETe30isHY2QjIWLNyCzmyUXnfxazPMZlY/edit?usp=sharing" target="_blank">mark your work</a> out of 20 and grade it. </p>
+<table width="1200" border="1">
+  <tr>
+    <th class="style1" scope="col"><div align="left">Player Movement: </div></th>
+    <th class="style1" scope="col">Easier</th>
+    <th class="style1" scope="col">Harder</th>
+    <th class="style1" scope="col">with Rotate</th>
+  </tr>
+  <tr>
+    <th class="style1" scope="row"><div align="left">Step Based </div></th>
+    <td valign="top" class="style1"><div align="left">Frogger (<a href="https://scratch.mit.edu/projects/227423095/" target="_blank">Example - Scratch</a>) </div>
+<div class="popup" onclick="myPopupFunction1()">Pygame Code (click here)
+  <span class="popuptext" id="myPopup1">
+<code>
+<pre>
+  x = 0
+  while 1==1:       # game loop
+    checkevents()   # call the event handler
+  
+  def checkevents()
+    for event in pygame.event.get():
+      if event.type == pygame<span style="color:cyan">.keyUP</span>:
+        if event.key == pygame.k_RIGHT:
+          x = x + 40
+</pre></code>
+  </span>
+</div>	
+	</td>
+
+    <td valign="top" class="style1"><div align="left">Athletics (<a href="https://scratch.mit.edu/projects/249960355/fullscreen/" target="_blank">Example - Scratch</a>) </div></td>
+    <td valign="top" class="style1"><div align="left">-</div></td>
+  </tr>
+  <tr>
+    <th class="style1" scope="row"><div align="left">Glide Based </div></th>
+    <td valign="top" class="style1"><div align="left">
+      <p>Car Racer (<a href="https://scratch.mit.edu/projects/549728714/" target="_blank">Example - Scratch</a>)</p>
+      <p>1. Using move and direction (absolute directions)</p>
+      <p><img src="MoveWithDirection&amp;Move.png" width="401" height="214" /></p>
+
+      <p>&nbsp;</p>
+    </div></td>
+    <td valign="top" class="style1"><div align="left">
+      <ul>
+        <li>Pong (Example - Construct3 with Physics) </li>
+        <li>Pong (<a href="https://drive.google.com/drive/folders/10pQpKJcsDIF3oN2QQIMFEe4PDZ8st4ov?usp=sharing" target="_blank">Tutorial - Construct3 with Physics</a>) </li>
+        <li>Pong (<a href="https://learnstones.com/pygame" target="_blank">Tutorial - Pygame</a>)</li>
+        <li>Pong (<a href="https://learnstones.com/pong" target="_blank">Tutorial - Small Basic</a>) </li>
+      </ul>
+      <p>2. Using independent X and Y velocities (absolute directions) </p>
+<div class="popup" onclick="myPopupFunction2()">Pygame Code (click here)
+  <span class="popuptext" id="myPopup2">
+<code>
+<pre>
+  x = 0
+  dx = 0
+  while 1==1:       # game loop
+    x = x + dx
+    checkevents()   # call the event handler
+  
+  def checkevents()
+    for event in pygame.event.get():
+      if event.type == pygame<span style="color:cyan">.keyDOWN</span>:
+        if event.key == pygame.k_RIGHT:
+          dx = 5 
+</pre></code>
+  </span>
+</div>
+      <p><img src="MoveWithXVelocity.png" width="484" height="260" /></p>
+	</td>
+    <td valign="top" class="style1"><div align="left">
+      <ul>
+        <li>Skier <a href="https://scratch.mit.edu/projects/245774188/#fullscreen" target="_blank">(Example - Scratch)</a></li>
+        <li>Tanks</li>
+      </ul>
+      <p>3. Using relative directions <img src="MoveWithRelativeDirection.png" width="477" height="290" /></p>
+    </div></td>
+  </tr>
+  <tr>
+    <th class="style1" scope="row"><div align="left">Acceleration</div></th>
+    <td valign="top" class="style1"><div align="left">
+      <ul>
+        <li>Rocket Lander </li>
+        <li><a href="https://learnstones.com/mario/" target="_blank">Donkey Kong</a> (According to NES video) </li>
+      </ul>
+    </div></td>
+    <td valign="top" class="style1"><div align="left">Defender</div></td>
+    <td valign="top" class="style1"><div align="left">Astroids (<a href="https://scratch.mit.edu/projects/340471621/fullscreen/" target="_blank">Movement - Scratch</a>) </div></td>
+  </tr>
+  <tr>
+    <th class="style1" scope="row"><div align="left">Gravity</div></th>
+    <td valign="top" class="style1"><div align="left">
+      <p>with Physics</p>
+      <ul>
+        <li>Flappy Bird (<a href="https://learnstones.com/flappy/" target="_blank">Example - Construct 3</a>) </li>
+      </ul>
+    </div></td>
+    <td valign="top" class="style1"><div align="left">
+      <p>without Physics </p>
+      <p>Platformer (<a href="https://scratch.mit.edu/projects/210842047/fullscreen/" target="_blank">Movement - Scratch</a>) </p>
+    </div></td>
+    <td valign="top" class="style1"><div align="left"></div></td>
+  </tr>
+  <tr>
+    <th class="style1" scope="row"><div align="left">Parallax Scroll </div></th>
+    <td valign="top" class="style1"><div align="left">Parallax Scroll (<a href="https://scratch.mit.edu/projects/251975615/fullscreen/" target="_blank">Movement - Scratch</a>)</div></td>
+    <td valign="top" class="style1"><div align="left">-</div></td>
+    <td valign="top" class="style1"><div align="left">-</div></td>
+  </tr>
+  <tr>
+    <th class="style1" scope="row"><div align="left">3D/Perspective</div></th>
+    <td valign="top" class="style1">
+      <ul>
+        <li>2D Crosshairs Shooter </li>
+    </ul></td>
+    <td valign="top" class="style1"><div align="left">
+      <ul>
+        <li>Endless Runner <a href="http://learnstones.com/endless/2.html" target="_blank">(Example- Javascript) </a></li>
+        <li>Endless Runner (<a href="https://www.youtube.com/watch?v=ZtHCnXMjIXY" target="_blank">Video - Subway surfer </a>) </li>
+      </ul>
+    </div></td>
+    <td valign="top" class="style1"><div align="left"></div></td>
+  </tr>
+</table>
+<p class="style1">Experience all the <a href="http://learnstones.com/move" target="_blank">different types of movement</a>  in one game environment </p>
+<p class="style1"><img src="Frogger.gif" width="336" height="302" /></p>
+<p class="style1">&nbsp;</p>
+<p class="style1">&nbsp;</p>
+<h2 class="style1">Behaviours / libraries</h2>
+<p class="style1">Behaviours in Construct 3 are built-in functions that allow you to save time and effort. You also have a few built-in primatives in Scratch </p>
+<table width="600" border="1">
+  <tr>
+    <th scope="col">Behaviour</th>
+    <th scope="col">Equations you don't have to use </th>
+  </tr>
+  <tr>
+    <th scope="row">Direction</th>
+    <td>Available in Scratch and C3 </td>
+  </tr>
+  <tr>
+    <th scope="row">Wrap</th>
+    <td><p>if x &gt; screen_width then</p>
+    <p>&nbsp;  </p></td>
+  </tr>
+  <tr>
+    <th scope="row">Bound to Room </th>
+    <td>Automatic in Scratch </td>
+  </tr>
+  <tr>
+    <th scope="row">Physics Engine </th>
+    <td><p>Available in C3. For example to give you: </p>
+    <ul>
+      <li>Gravity</li>
+      <li><a href="https://replit.com/@drake8/ZeusElasticCollision#main.py" target="_blank">Elastic Collision</a> (University Level Maths) </li>
+    </ul></td>
+  </tr>
+</table>
+<p class="style1">&nbsp;</p>
+<p class="style1">&nbsp;</p>
+<p class="style1">&nbsp; </p>
+<h2 class="style1">Why study Video Games Programming? </h2>
+<table width="1200" border="1">
+  <tr>
+    <th scope="col">I want to... </th>
+    <th scope="col">I can practice computer science... </th>
+    <th scope="col">I can explore ... </th>
+  </tr>
+  <tr>
+    <td><ul>
+      <li>build my own game</li>
+      <li>work in the Games industry</li>
+      <li>carry on my work at home</li>
+      <li>create digital characters / pixel art</li>
+      <li>practice using XY coordinates </li>
+    </ul></td>
+    <td><ul>
+      <li>solving logical problems  &amp; puzzles</li>
+      <li>developing my computational thinking (Decomposition, Abstractions, Pattern recognition) </li>
+      <li>developing my debugging skills </li>
+      <li>using functions to manage my growing code-base </li>
+    </ul></td>
+    <td><ul>
+      <li>think about Acceleration</li>
+      <li>think about 3D / Perspective</li>
+      <li>practically use my Maths &amp; Physics </li>
+    </ul>      <p>&nbsp;</p></td>
+  </tr>
+</table>
+<p class="style1">&nbsp;</p>
+</body>
+</html>

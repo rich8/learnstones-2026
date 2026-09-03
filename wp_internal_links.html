@@ -1,0 +1,257 @@
+<h1>Lesson 3: Website in a Single Page</h1>
+
+This lesson will use internal hash(#) links to create a website with a number of pages contained in one file
+
+<h3>Examples</h3>
+
+<ul>
+<li><a href="http://www.i-like-cats.co.uk/">www.i-like-cats.co.uk/</a> uses a "back to the top" link</li>
+<li><a href="http://output.jsbin.com/icewoj/">very simple example</a> Links are in a "fixed position" at the top of the page</li>
+<li><a href="http://output.jsbin.com/fehuzicase/">Styled example with Javascript</a> and Hover effects on different elements</li>
+</ul>
+
+<hr />
+
+<h1>Getting Started</h1>
+
+You need to start with a page with one <code>&lt;h1&gt;</code> and some <code>&lt;h2&gt;</code>s
+
+<pre><code>&lt;h1&gt;My Website&lt;/h1&gt;
+
+&lt;h2&gt;Page 1&lt;/h2&gt;
+Write intro here
+
+&lt;h2&gt;Page 2&lt;/h2&gt;
+Blah blah about Page 2
+
+&lt;h2&gt;Page 3&lt;/h2&gt;
+Intelligent comments about Page 3
+</code></pre>
+
+<hr />
+
+<h1>Identifying the Pages</h1>
+
+We need to add id attributes to your <code>&lt;h2&gt;s</code> in order to be able to link to them
+
+<pre><code>&lt;h1&gt;My Website&lt;/h1&gt;
+
+&lt;h2 id="p1"&gt;Page 1&lt;/h2&gt;
+Write intro here
+
+&lt;h2 id="p2"&gt;Page 2&lt;/h2&gt;
+Blah blah about Page 2
+
+&lt;h2 id="p3"&gt;Page 3&lt;/h2&gt;
+Intelligent comments about Page 3
+</code></pre>
+
+<h2>Theory id &amp; Class attributes</h2>
+
+HTML
+
+<blockquote>
+  <code>&lt;h2 id="Food"&gt;</code>
+  
+  <code>&lt;h2 class="MainSectionTitle"&gt;</code>
+</blockquote>
+
+Any tag can be given an id or class attribute (or both) that allows for more flexible styling.
+
+<ul>
+<li>ID is for unique elements and each id should only be used once.</li>
+<li>Class is for a group of elements all of which will take the same style</li>
+</ul>
+
+CSS
+
+<pre><code>#Food {font-style:serif}   //will style the tag with id="TheBible"
+
+.MainSectionTitle {font-style:sans}        //will style any tag with class="book"
+
+h2.MainSectionTitle {font-style:sans}     //will style any h2 with class="book"
+</code></pre>
+
+The last statement will apply the same style to the h2 tag but would not work on <code>&lt;h1 class="MainSectionTitle"&gt;</code>
+
+<h3>Should we use ID or CLASS to identify the pages?</h3>
+
+<h2>Also See</h2>
+
+<ul>
+<li><a href="http://www.htmldog.com/guides/css/intermediate/classid/">html dog</a></li>
+</ul>
+
+<hr />
+
+<h1>Internal Links</h1>
+
+At the top of the document add the links. Each <code>a</code> or <code>anchor</code> tag is linked to the id that we created in the <code>h2</code> (note you need to add the <code># or hash</code>)
+
+<pre><code>&lt;a href="#p1"&gt;Page 1&lt;/a&gt;
+&lt;a href="#p2"&gt;Page 2&lt;/a&gt;
+&lt;a href="#p3"&gt;Page 3&lt;/a&gt;
+
+&lt;h1&gt;My Website&lt;/h1&gt;
+
+&lt;h2 id="p1"&gt;Page 1&lt;/h2&gt;
+Write intro here
+
+&lt;h2 id="p2"&gt;Page 2&lt;/h2&gt;
+Blah blah about Page 2
+
+&lt;h2 id="p3"&gt;Page 3&lt;/h2&gt;
+Intelligent comments about Page 3
+</code></pre>
+
+By clicking on the word "Page 1" you get taken to the h2 tag tith id="p1"
+
+<h4>I understand how internal/hash links work</h4>
+
+<hr />
+
+<h1>Space for Scrolling</h1>
+
+We are going to scroll the document up and down to appear as though we are changing pages. To do this we need to create space by using margins and padding
+
+CSS
+
+<pre><code>body {padding-bottom:600px;}    
+h2 {padding-top:80px;
+border:2px solid magenta;}
+</code></pre>
+
+To understand the difference between margins and padding you need to understand the CSS "Box Model" (Next Section)
+
+<hr />
+
+<h1>Box Model</h1>
+
+<ul>
+<li>Margins are outside the border</li>
+<li>Padding is inside the border (Note: The border might be invisible)</li>
+</ul>
+
+<img src="http://www.w3schools.com/css/box-model.gif" alt="" />
+
+<h4>I know the difference between margin and padding</h4>
+
+<h2>Also See</h2>
+
+<ul>
+<li><a href="http://www.w3schools.com/css/css_boxmodel.asp">More detail</a></li>
+<li><a href="http://o2learn.decoded.co/html-css/lesson/9">Decoded lesson on Box model</a></li>
+</ul>
+
+<hr />
+
+<h1>Fix the Nav &amp; Title</h1>
+
+Mark up the Navigation using the <code>&lt;Nav&gt;</code> Tag
+
+HTML
+
+<pre><code>&lt;nav&gt;   
+ &lt;a href="#p1"&gt;Page 1&lt;/a&gt;
+ &lt;a href="#p2"&gt;Page 2&lt;/a&gt;
+ &lt;a href="#p3"&gt;Page 3&lt;/a&gt;
+
+ &lt;h1&gt;My Website&lt;/h1&gt;
+&lt;/nav&gt;
+</code></pre>
+
+Fix the Navigation to the top right of the page using the following CSS
+
+CSS
+
+<pre><code>nav {
+position:fixed; 
+top:20px;
+right:10px;
+}
+</code></pre>
+
+<h2>Theory</h2>
+
+HTML starts placing elements in the top left corner of the doc.
+
+<ul>
+<li>Inline HTML elements (text &amp; images) are positioned after each other and they flow onto the next line if necessary.</li>
+<li>Block elements (eg. headings) automatically start on a new line</li>
+<li>The vertical placement depends on the elements that came before</li>
+</ul>
+
+The rest of the document should flow underneath the Nav (you could always put a white background on it if you think that looks silly)
+
+<hr />
+
+<h1>A Better Approach</h1>
+
+On the previous section when you first open the page, the Page 1 title is too low and jumps up when you click the link. So here is a new approach for our 'website in a single file' to solve this problem. You will need to create a <code>&lt;section&gt;</code> tag for each page as follows:
+
+<pre><code>&lt;section id="p1"&gt;
+  &lt;h2&gt;Page 1&lt;/h2&gt;
+  Blah blah blah about Page 1
+&lt;/section&gt;
+</code></pre>
+
+This allows us to put a big <code>padding-bottom</code> on the "section" to create the space we need to make only one h2 appear on the page.
+
+<pre><code>padding-bottom:600px;
+overflow:hidden; //removes the scroll bars
+</code></pre>
+
+<a href="https://jsfiddle.net/3zvx2au0/embedded/result/">On JS Fiddle</a>
+
+<hr />
+
+<h1>Javascript</h1>
+
+See this <a href="http://jsbin.com/suwehu/7">Smooth Scroll</a> Version
+
+<h2>Instructions</h2>
+
+<ol>
+<li>Copy the javascript from the jsbin linked above</li>
+<li>Add the <code>class="Scroll"</code> to your <code>&lt;a&gt;</code> Links</li>
+</ol>
+
+<hr />
+
+<h1>Buttons &amp; Hover</h1>
+
+<h2>Hover</h2>
+
+make your links interactive
+
+CSS
+
+<pre><code>a:hover {
+  background:yellow;
+}
+</code></pre>
+
+When you hover over the links, the will now go yellow.
+
+<h2>Buttons</h2>
+
+CSS
+
+<pre><code>a {
+  display: block;   /* for vertical buttons - block elements start on a new line */
+  padding:20px;     /* pad out the area around the link to create button*/
+  margin-bottom:10px; /* put space between the buttons */
+  background:pink;    /* colour the button - a gradient looks even better */
+
+}
+</code></pre>
+
+<h2>Theory</h2>
+
+<pre><code>:hover     /* will style hover over any element   */
+a:hover    /* will style hover over &lt;a&gt; only */
+h2:hover   /* will style hover over &lt;h2&gt; only */
+a:visited  /* will style visited links  */
+</code></pre>
+
+See also <a href="http://www.w3schools.com/css/css_pseudo_classes.asp">Psuedo Classes</a>

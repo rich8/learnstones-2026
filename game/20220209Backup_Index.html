@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Games Programming</title>
+<style type="text/css">
+<!--
+.style1 {font-family: Arial, Helvetica, sans-serif}
+-->
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  color:blue;
+  text-decoration: underline;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 350px;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+.popup .popupimage {
+  visibility: hidden;
+  width: 618px;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
+<script>
+// When the user clicks on div, open the popup
+function myPopupFunction(event) {
+  event.target.children[0].classList.toggle("show")
+}
+
+
+</script>
+</head>
+
+<body class="style1">
+<h1 class="style1">Programming Video Games </h1>
+<p class="style1">Welcome to the Video Games help page you will learn a four step method to help you build some classic video games. Hopefully, then you can use this method to develop your own games. </p>
+<ol class="style1">
+  <li>Create </li>
+  <li>Movement</li>
+  <li>Collision Detection</li>
+  <li>Gameplay Development  </li>
+  
+</ol>
+<p class="style1">How to <a href="https://docs.google.com/spreadsheets/d/1U0Yl2-p7OXETe30isHY2QjIWLNyCzmyUXnfxazPMZlY/edit?usp=sharing" target="_blank">mark your work</a> out of 20 and grade it. </p>
+<table width="1200" border="1">
+  <tr>
+    <th class="style1" scope="col"><div align="left">Player Movement: </div></th>
+    <th class="style1" scope="col">Easier</th>
+    <th class="style1" scope="col">Harder</th>
+    <th class="style1" scope="col">with Rotate</th>
+  </tr>
+  <tr>
+    <th class="style1" scope="row"><div align="left">Step Based </div></th>
+    <td valign="top" class="style1"><div align="left">
+	<ul>
+	<li>Frogger (<span class="popup" onClick="myPopupFunction(event)">Click for image
+  <span class="popuptext">
+  <img src="Frogger.gif" width="336" height="302">  </span></span> | <a href="https://scratch.mit.edu/projects/227423095/" target="_blank">Example - Scratch</a>) 
+    <li>Frogger (<a href="https://scratch.mit.edu/projects/638820495/fullscreen/" target="_blank">Example with Wait</a> - Scratch)     
+    <li><div class="popup" onClick="myPopupFunction(event)">Pygame Code (click here)
+  <span class="popuptext">
+<code>
+<pre>
+  x = 0
+  while 1==1:       # game loop
+    checkevents()   # call the event handler
+  
+  def checkevents()
+    global x
+    for event in pygame.event.get():
+      if event.type == pygame<span style="color:cyan">.keyUP</span>:
+        if event.key == pygame.k_RIGHT:
+          x = x + 50
+</pre></code>  </span>
+</div>	
+</ul>
+</div>
+	</td>
+
+    <td valign="top" class="style1"><div align="left">
+	
+      <ul>
+        <li>Athletics (<a href="https://scratch.mit.edu/projects/249960355/fullscreen/" target="_blank">Example - Scratch</a>) </li>
+        <li>Konomi Track &amp; Field [1983] <span class="popup" onClick="myPopupFunction(event)">(Click for image
+  <span class="popuptext">
+  <img src="Track_&_Field_02.png" width="512" height="448">  </span></span>
+  |<a href="https://en.wikipedia.org/wiki/Track_%26_Field_(video_game)" target="_blank">Wikipedia</a>)
+  </li>
+      </ul>
+    </div></td>
+    <td valign="top" class="style1"><div align="left">
+      <ul>
+        <li>Not worth the effort</li>
+        <li>Although 8-direction games might be considered here </li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr>
+    <th class="style1" scope="row"><div align="left">Glide Based </div></th>
+    <td valign="top" class="style1"><div align="left">
+      <p>1. Using move and direction (absolute directions)</p>
+      <p><img src="MoveWithDirectionAndMove.png" width="519" height="277" /></p>
+      
+<div class="popup" onClick="myPopupFunction(event)">Construct 3 Code - Popup
+  <span class="popupimage">
+  <img src="c3p/c3_Glide_move_with_direction.png" width="618" height="151">  </span></div>
+  <ul>
+  <li>Car Racer (<a href="https://scratch.mit.edu/projects/549728714/" target="_blank">Example - Scratch</a>)</li>
+  <li>Pong (Example - <a href="http://learnstones.com/c3pong/" target="_blank">Example C3</a> - <a href="https://drive.google.com/drive/folders/10pQpKJcsDIF3oN2QQIMFEe4PDZ8st4ov?usp=sharing" target="_blank">Tutorial C3 with Physics</a>) </li>
+  <li>Squash Rugby (<a href="https://learnstones.com/c3/squashrugby" target="_blank">Example - C3 with Physics </a>) </li>
+  <li>Car Racer (<a href="https://learnstones.com/carracer/" target="_blank">Example Construct 3</a>) </li>
+  </ul>
+    </div></td>
+    <td valign="top" class="style1"><div align="left">
+
+      <p>2. Using independent X and Y velocities (absolute directions) </p>
+<div class="popup" onClick="myPopupFunction(event)">Pygame Code (click here)
+  <span class="popuptext">
+<code>
+<pre>
+  x = 0
+  dx = 0
+  while 1==1:       # game loop
+    x = x + dx
+    checkevents()   # call the event handler
+  
+  def checkevents()
+    global dx
+    for event in pygame.event.get():
+      if event.type == pygame<span style="color:cyan">.keyDOWN</span>:
+        if event.key == pygame.k_RIGHT:
+          dx = 5 
+</pre></code>
+  </span>
+</div>
+      <p><img src="MoveWithXVelocity.png" width="484" height="260" /></p>
+<div class="popup" onClick="myPopupFunction(event)">Construct 3 Code - Popup
+  <span class="popupimage">
+  <img src="c3p/c3_Glide_move_independentXY.png" width="585" height="159"></span></div>
+        <ul><li>Space Shooter (<a href="https://learnstones.com/c3/spaceshooter" target="_blank">Example C3</a> - <a href="https://drive.google.com/drive/folders/1lxyCHEmAJWLvt2IkaLMtsti2O5ZhNIY2?usp=sharing" target="_blank">Tutorial</a>) </li>
+          <li>Pong (<a href="https://learnstones.com/pygame" target="_blank">Tutorial - Pygame</a>)</li>
+        </ul>
+	  </div>
+	</td>
+    <td valign="top" class="style1"><div align="left">
+      <p>3. Using relative directions <img src="MoveWithRelativeDirection.png" width="495" height="244" /></p>
+<div class="popup" onClick="myPopupFunction(event)">Construct 3 Code - Popup
+  <span class="popupimage">
+  <img src="c3p/c3_Glide_move_rotate.png" width="644" height="162">  </span></div>
+        <ul>
+        <li>Skier <a href="https://scratch.mit.edu/projects/245774188/#fullscreen" target="_blank">(Example - Scratch)</a></li>
+        <li>Atari Combat [1977] (<a href="https://www.youtube.com/watch?v=3m86ftny1uY" target="_blank">Youtube - Tank </a>) </li>
+        <li>Atari Combat [1977] (<a href="https://en.wikipedia.org/wiki/Combat_(Atari_2600)" target="_blank">Wikipedia - Biplanes </a>) 
+		</li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr>
+    <th class="style1" scope="row"><div align="left">Acceleration</div></th>
+    <td valign="top" class="style1"><div align="left">
+      <ul>
+        <li>Rocket Lander </li>
+        <li><a href="https://learnstones.com/mario/" target="_blank">Donkey Kong</a> [broken example](used acceleration based on floating point variables) </li>
+      </ul>
+    </div></td>
+    <td valign="top" class="style1"><div align="left">
+      <p>Defender</p>
+      <div class="popup" onClick="myPopupFunction(event)">Construct 3 Code - Popup
+  <span class="popupimage">
+  <img src="c3p/c3_Defender_speed_and_move.png" width="691" height="255">  </span></div>
+      <ul>
+        <li>Defender [<a href="https://en.wikipedia.org/wiki/Defender_(1981_video_game)" target="_blank">1981</a>]  (Example - <a href="http://learnstones.com/defender" target="_blank">Construct3</a>) Defender was one of the <a href="https://vgsales.fandom.com/wiki/List_of_highest-grossing_video_games" target="_blank">highest grossing video games</a> of all time grossing more than 1 billion dollars. </li>
+      </ul>
+    </div></td>
+    <td valign="top" class="style1"><div align="left">Astroids (<a href="https://scratch.mit.edu/projects/340471621/fullscreen/" target="_blank">Movement - Scratch</a>) </div></td>
+  </tr>
+  <tr>
+    <th class="style1" scope="row"><div align="left">Gravity</div></th>
+    <td valign="top" class="style1"><div align="left">
+      <p>with Physics</p>
+      <ul>
+        <li>Flappy Bird: Shriya's art (<a href="https://learnstones.com/flappy/" target="_blank">Example - Construct 3</a>) </li>
+        <li>2 Player Flappy by Marianne (<a href="https://learnstones.com/c3/marianne" target="_blank">Example - Construct 3</a>) </li>
+        <li>Platformer Hackathon example by Alisha (<a href="https://learnstones.com/c3/platformer" target="_blank">Example - Construct 3</a>) </li>
+      </ul>
+    </div></td>
+    <td valign="top" class="style1"><div align="left">
+      <p>without Physics </p>
+      <p>Platformer (<a href="https://scratch.mit.edu/projects/210842047/fullscreen/" target="_blank">Example - Scratch</a>) </p>
+    </div></td>
+    <td valign="top" class="style1"><div align="left"></div></td>
+  </tr>
+  <tr>
+    <th class="style1" scope="row"><div align="left">Parallax Scroll </div></th>
+    <td valign="top" class="style1"><div align="left">Parallax Scroll (<a href="https://scratch.mit.edu/projects/251975615/fullscreen/" target="_blank">Movement - Scratch</a>)</div></td>
+    <td valign="top" class="style1"><div align="left">-</div></td>
+    <td valign="top" class="style1"><div align="left">-</div></td>
+  </tr>
+  <tr>
+    <th class="style1" scope="row"><div align="left">3D/Perspective</div></th>
+    <td valign="top" class="style1">
+      <ul>
+        <li>2D Crosshairs Shooter </li>
+    </ul></td>
+    <td valign="top" class="style1"><div align="left">
+      <ul>
+        <li>Endless Runner <a href="http://learnstones.com/endless/2.html" target="_blank">(Example- Javascript) </a></li>
+        <li>Endless Runner (<a href="https://www.youtube.com/watch?v=ZtHCnXMjIXY" target="_blank">Video - Subway surfer </a>) </li>
+      </ul>
+    </div></td>
+    <td valign="top" class="style1"><div align="left"></div></td>
+  </tr>
+</table>
+<p class="style1">Experience all the <a href="http://learnstones.com/move" target="_blank">different types of movement</a>  in one game environment </p>
+<p class="style1">&nbsp;</p>
+<p class="style1">&nbsp;</p>
+<p class="style1">&nbsp;</p>
+<h2 class="style1">Behaviours / libraries</h2>
+<p class="style1">Behaviours in Construct 3 are built-in functions that allow you to save time and effort. You also have a few built-in primatives in Scratch </p>
+<table width="600" border="1">
+  <tr>
+    <th scope="col">Behaviour</th>
+    <th scope="col">Equations you don't have to use </th>
+  </tr>
+  <tr>
+    <th scope="row">Direction</th>
+    <td>Available in Scratch and C3 </td>
+  </tr>
+  <tr>
+    <th scope="row">Wrap</th>
+    <td><p>if x &gt; screen_width then</p>
+    <p>&nbsp;  </p></td>
+  </tr>
+  <tr>
+    <th scope="row">Bound to Room </th>
+    <td>Automatic in Scratch </td>
+  </tr>
+  <tr>
+    <th scope="row">Physics Engine </th>
+    <td><p>Available in C3. For example to give you: </p>
+    <ul>
+      <li>Gravity</li>
+      <li><a href="https://replit.com/@drake8/ZeusElasticCollision#main.py" target="_blank">Elastic Collision</a> (University Level Maths) </li>
+    </ul></td>
+  </tr>
+</table>
+<p class="style1">&nbsp;</p>
+<p class="style1">&nbsp;</p>
+<p class="style1">&nbsp; </p>
+<h2 class="style1">Why study Video Games Programming? </h2>
+<table width="1200" border="1">
+  <tr>
+    <th scope="col">I want to... </th>
+    <th scope="col">I can practice computer science... </th>
+    <th scope="col">I can explore ... </th>
+  </tr>
+  <tr>
+    <td><ul>
+      <li>build my own game</li>
+      <li>work in the Games industry</li>
+      <li>carry on my work at home</li>
+      <li>create digital characters / pixel art</li>
+      <li>practice using XY coordinates </li>
+    </ul></td>
+    <td><ul>
+      <li>solving logical problems  &amp; puzzles</li>
+      <li>developing my computational thinking (Decomposition, Abstractions, Pattern recognition) </li>
+      <li>developing my debugging skills </li>
+      <li>using functions to manage my growing code-base </li>
+    </ul></td>
+    <td><ul>
+      <li>think about Acceleration</li>
+      <li>think about 3D / Perspective</li>
+      <li>practically use my Maths &amp; Physics </li>
+    </ul>      <p>&nbsp;</p></td>
+  </tr>
+</table>
+<p class="style1">&nbsp;</p>
+</body>
+</html>

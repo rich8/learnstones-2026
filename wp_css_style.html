@@ -1,0 +1,263 @@
+<h1>CSS Styling</h1>
+
+<h4>CSS = Cascading Style Sheets</h4>
+
+<ul>
+<li>CSS allows us to style our <a href="http://learnstones.com/web">HTML</a> document</li>
+<li>Its more dangerous and more powerful than Word Processing. You change many elements at once... when you know how the cascade works</li>
+</ul>
+
+<table align="center" width="400px" border="1">
+<tr>
+<td><b>Content</b></td>
+<td><b>Style</b></td>
+</tr>
+<tr>
+<td>Words
+Paragraphs
+Headings</td>
+<td>Font Type
+Font Size
+Colour</td>
+</tr>
+<tr>
+<td>use <b>HTML</b></td>
+<td>use <b>CSS</b></td>
+</tr>
+</table>
+
+<h4>I understand the difference between content and style</h4>
+
+<hr />
+
+<h1>Styling Our Page</h1>
+
+Add the following CSS statement that will style all of the heading2 <code>&lt;h2&gt;</code> tags to have a red background
+
+<pre><code>h2 {background:red;}
+
+/* Note this is CSS a different language to HTML. There are no `&lt; &gt;` 
+and you can't forget to use `;`  */
+</code></pre>
+
+If it doesn't work, check you have some <code>&lt;h2&gt;</code>s on your page (see below):
+
+<pre><code>&lt;h1&gt; My Website&lt;/h1&gt;
+
+&lt;h2&gt; Me and my family&lt;/h2&gt;
+Welcome to my website. I am amazing. My family are all circus performers
+
+&lt;h2&gt; My Hobbies&lt;/h2&gt;
+I like to play chess etc.
+
+&lt;h2&gt; Music&lt;/h2&gt;
+I like Gangnam Style
+</code></pre>
+
+<h3>Can you get a blue background on the first title <code>&lt;h1&gt;</code>?</h3>
+
+<hr />
+
+<h1>Multiple CSS Style Statements</h1>
+
+Spaces and line breaks don't matter in CSS (or HTML) so you can use both of the following layouts:
+
+<pre><code>h1 {text-align:center; font-family:sans-serif;}
+
+h2 {
+  background:red;
+  border: 3px solid black;
+  font-family:sans-serif;
+}
+</code></pre>
+
+<h3>I have made at least 2 style changes to my document</h3>
+
+<h3>Style Help</h3>
+
+<ul>
+<li><a href="http://www.w3schools.com/css/css_border.asp">Borders CSS</a> Longhand and short hand </li>
+<li><a href="http://www.w3schools.com/cssref/pr_font_font.asp">Font CSS</a></li>
+</ul>
+
+<h4>You could also try</h4>
+
+<ul>
+<li><a href="http://o2learn.decoded.co/html-css/lesson/6">Decoded CSS lesson</a></li>
+</ul>
+
+<hr />
+
+<h1>Search for Help</h1>
+
+No one can remember all the codes (syntax) so you need to know how to use Google properly.
+
+eg.1 How to align text?
+
+<pre><code>Google: CSS align text
+</code></pre>
+
+eg.2 How to Find a colour (color american spelling)
+
+<pre><code>Google: CSS color 
+</code></pre>
+
+eg.3 How to do an ordered list in html
+
+<pre><code>Google: HTML lists
+</code></pre>
+
+<p>You might end up here
+<img src="http://www.w3schools.com/images/w3schoolslogoNEW310113.gif" alt="www" /></p>
+
+Remember
+
+<ul>
+<li>HTML for content </li>
+<li>CSS for presentation/Style</li>
+</ul>
+
+<h4>Are you confident of working independently using Google for help?</h4>
+
+<hr />
+
+<h1>Colour 5 Ways</h1>
+
+Try out 5 different ways of writing colour in CSS
+
+<pre><code>color:red;               //16 words notation (common colours with cyan and magenta)
+color:rgb(100%,0%,0%);   //Percentage rgb (Red, Green, Blue colour)
+color:rgb(255,0,0);      //256 rgb where 0=none 255=max
+color:#f00;              //rgb single hex digit (0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f where f=16=max)
+color:#ff0000;           //rgb hex pairs 00=none ff=max
+</code></pre>
+
+Using your web site (or <a href="http://www.w3schools.com/cssref/tryit.asp?filename=trycss_color">this one</a> ) find out which colours are written by each of the 5 lines above.
+
+<h4>I know how to find the colour I need using css</h4>
+
+<h4>You could also try</h4>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Web_colors#HTML_color_names">16 Named colours</a></li>
+<li><a href="http://www.w3schools.com/html/html_colornames.asp">147 Named colours</a></li>
+<li><a href="http://www.calculatorcat.com/free_calculators/color_slider/rgb_hex_color_slider.phtml">Mix your own colour sliders</a></li>
+</ul>
+
+<hr />
+
+<h1>Add Body</h1>
+
+If we want the whole document to have a red background we can do
+
+<pre><code>body {background:red}
+</code></pre>
+
+But this will not work until we add the <code>&lt;body&gt;</code> tag pair to the document. All the styling is normally kept in the `head of the document
+
+<pre><code>&lt;body&gt;
+
+  &lt;H1&gt;Hello World!&lt;/h1&gt;
+  This is a website about Billy, written in html
+
+&lt;/body&gt;
+</code></pre>
+
+<h3>Change the background and the font colour of the whole of the document</h3>
+
+<hr />
+
+<h1>Cool CSS</h1>
+
+<blockquote>
+body {
+  background:Cyan;
+  color:blue;        /*Note this is TEXT colour*/
+  font-family:sans-serif;
+}
+
+h2 {
+  color:orange;
+  background:lightgrey;
+  text-align:left;
+  padding-left:20px;
+  border-width:5px;
+  border-style:dotted;
+  border-color:blue;
+  border-radius:20px;
+  box-shadow:5px 3px 5px grey;
+  transform: rotate(5deg);
+}</blockquote>
+
+<a href="http://jsbin.com/jagesicopu/1/edit?css,output">See This example working</a>
+
+<hr />
+
+<h1>Add Head</h1>
+
+Back to the HTML, a Head element changes the title of the browser window
+
+<pre><code>&lt;head&gt;
+  &lt;title&gt;Billy's Site&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;H1&gt;Hello World!&lt;/h1&gt;
+  This is a website about Billy, written in html
+
+&lt;/body&gt;
+</code></pre>
+
+<hr />
+
+<h1>Google Fonts</h1>
+
+<p>Choose your font <a href="https://www.google.com/fonts">Here</a> I chose "Arvo"
+Place the following link for the font in the <code>&lt;head&gt;</code> of the HTMML</p>
+
+<pre><code> &lt;head&gt;
+   &lt;link rel="stylesheet" type="text/css" 
+      href="http://fonts.googleapis.com/css?family=Arvo"&gt;
+&lt;/head&gt;
+</code></pre>
+
+In the CSS
+
+<pre><code>font-family: Arvo;
+</code></pre>
+
+<a href="http://jsbin.com/fugidubuxi/1/edit?html,css,output">See Example</a>
+
+<hr />
+
+<h1>Save in Notepad</h1>
+
+<ul>
+<li>Copy your html into a text file using notepad (in Start> All Progs > Accessories)</li>
+<li>Create a folder called My Website</li>
+<li>Save the text file in this folder as Me.html </li>
+<li>Double click on your Me.html file in your My Website folder</li>
+</ul>
+
+<img src="http://media.learnstones.com/dra/web/website-in-a-single-file/NotepadFind.png" alt="" />
+
+<h2>Save with CSS</h2>
+
+Your text file will need to have the following structure:
+
+<pre><code>&lt;head&gt;
+  &lt;style&gt;
+     &lt;!-- Paste the CSS on the next lines ie. in between the style tags --&gt;
+     h1 {background:red;}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+     &lt;!-- HTML goes here --&gt;
+&lt;/body&gt;
+</code></pre>
+
+<hr />
+
+<h1>Next</h1>
+
+Try the <a href="http://learnstones.com/lessons/internal-links/">Internal Links</a> Lesson

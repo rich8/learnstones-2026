@@ -132,13 +132,23 @@ Copy and paste your most complicated subroutine for the teacher.
 
 # Abstraction
 
-Now we have named some sub routines we can combine them into new things. It allows us to abstract (hide) the detail. Programmers also call this black boxing or deconstruction. This is one of the most important skill that programmers have: computational thinking.
+Now we have named some subroutines we can combine them into new things. Subroutines allow us to abstract (hide) the detail. Programmers also call this black boxing. Abstraction is an important part of what we called Computational Thinking and is used extensively in Computer Science.
+
+Computational thinking is a problem solving technique across many disciplines.
+
+## Definitions
+- Decomposition : breaking down a problem into smaller parts that are easier to solve
+- Abstraction : Hiding unecessary detail
+- Algorithm : Step-by-step instructions to solve a problem
+
+## Efficiency
+Some algorithms are more efficient than others. Efficiency is considered to be the algorithm that executes fastest NOT the number of lines of code. NOR how easy it is for a humnan being to understand the code. Although both of these are important to good programming.
 
 #### Task 1: Create a House using SQU and TRI
 
 ![](images/logohouse1.png)
 
-[HINT (don't use it unless you Reeelly need it!)](images/logohouse.png)
+[HINT (don't use it unless you Reeeally need it!)](images/logohouse.png)
 
 #### Task 2: (Harder) Create a street
 
@@ -148,7 +158,7 @@ Now we have named some sub routines we can combine them into new things. It allo
 
 - I have done house and street
 - I know that to find the problems in my code I have to 'debug' it (work like a detective)
-- I know that programs are split into pieces which are combined together and this is called abstraction
+- I have started to memorise the definitions for Algorithm, Decomposition and Abstraction
 
 ### Submit
 
@@ -412,6 +422,6 @@ I have watched at least 2 videos
 
 Also recursive
 
-![](/media/dra/computing/logo-programming/logospiral.png)
+![](images/logospiral.png)
 
 ??? ![](images/logoskool.png) ![](images/logocirclepattern.png) ![](images/logowoops.png)

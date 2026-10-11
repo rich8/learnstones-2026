@@ -29,10 +29,22 @@
   }
 
   function splitSlides(markdown) {
-    return stripFrontMatter(markdown)
-      .split(/^\s*(?:---|<hr\s*\/?>)\s*$/im)
-      .map(function (slide) {
-        return slide.trim();
+    var slides = [[]];
+    var previous = "";
+    stripFrontMatter(markdown).split(/\r?\n/).forEach(function (line) {
+      // A rule of 3+ dashes ends a slide only after a blank line; directly
+      // under text it is a setext "##" underline and belongs to the slide.
+      var isRule = /^\s*-{3,}\s*$/.test(line) && previous.trim() === "";
+      if (isRule || /^\s*<hr\s*\/?>\s*$/i.test(line)) {
+        slides.push([]);
+      } else {
+        slides[slides.length - 1].push(line);
+      }
+      previous = line;
+    });
+    return slides
+      .map(function (lines) {
+        return lines.join("\n").trim();
       })
       .filter(Boolean);
   }
